@@ -41,17 +41,17 @@ Companies needed a way to automate the deployment, scaling, and management of co
 
 ---
 
-## Why is Docker not the end solution?
+## Why Docker is not the end solution?
 
 Docker, as we all know, only helps in packaging the code and its dependencies in a container that runs in isolated environments. Containers are ephemeral in nature, which means they have a short life and can die and revive anytime.
 
-**Single host:**
-
-* **No auto-healing**: If containers are stopped by a user or go down for any reason, they do not restart automatically.
+* **Single host:** Runs on a single machine.
     
-* **No auto-scaling**: Containers are not automatically increased during high traffic.
+* **No auto-healing:** Containers do not restart automatically if stopped by a user or if they go down for any reason.
     
-* **No enterprise-level support**: Docker Swarm can provide some support, but it is platform-oriented and only works well with Docker containers.Does not support Kubernetes custom resource definitions (extensions) that offer many useful features.
+* **No auto-scaling:** Containers do not automatically increase during high traffic.
+    
+* **No enterprise-level support:** Docker Swarm offers some support but is platform-oriented and only works well with Docker containers. It does not support Kubernetes custom resource definitions (extensions) that offer many useful features.
     
 
 Let’s start with an **Netflix example** to make things easier for you:
