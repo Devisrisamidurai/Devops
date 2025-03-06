@@ -71,19 +71,19 @@ Imagine it's weekend time in New York, and everyone is watching Netflix. On week
 
 Wouldn't it be great if there were a tool that automatically scales, heals, and manages containers?
 
-And, That’s where Kubernetes comes in. Gotcha?
+And, That’s where Kubernetes comes in. Got it?
 
 ---
 
 ## How and where was Kubernetes born?
 
-<mark>Google</mark> had been managing massive workloads for years using an internal system called <mark>Borg</mark>.  
+**Google** had been managing massive workloads for years using an internal system called **Borg**.  
 Borg was used internally at Google to schedule and run workloads efficiently across clusters of machines.  
 Learning from Borg’s strengths and limitations, Google developed a more flexible, open-source system now called Kubernetes.
 
-<mark>Kubernetes is often called K8s </mark> (k, 8 replaced for in between 8 letters,s). Cool, right?
+**Kubernetes is often called K8s** (k, 8 replaced for in between 8 letters,s). Cool, right?
 
-In 2014, Google open-sourced Kubernetes and donated it to the <mark>Cloud Native Computing Foundation (CNCF)</mark>, an organization that focuses on building things around Kubernetes.
+In 2014, Google open-sourced Kubernetes and donated it to the **Cloud Native Computing Foundation (CNCF)**, an organization that focuses on building things around Kubernetes.
 
 After its launch, major tech companies (Microsoft, Red Hat, AWS) adopted Kubernetes. It became cloud-agnostic, meaning it could run on any cloud provider or even on-premises. Today, it is the foundation of modern cloud-native computing and powers applications at scale.
 
@@ -91,7 +91,7 @@ After its launch, major tech companies (Microsoft, Red Hat, AWS) adopted Kuberne
 
 ## Features:
 
-Kubernetes is a <mark>container orchestration</mark> platform (simple, minimalistic). It is built on a master-worker node architecture. It is actually a <mark>cluster</mark> under the hood, which means it contains a group of nodes.
+Kubernetes is a **container orchestration** platform (simple, minimalistic). It is built on a master-worker node architecture. It is actually a **cluster** under the hood, which means it contains a group of nodes.
 
 * **Orchestration tool**: Helps in deploying & managing containers dynamically.
     
@@ -104,13 +104,13 @@ Kubernetes is a <mark>container orchestration</mark> platform (simple, minimalis
 * **Fault tolerance and load balancing**.
     
 
-Applications that meet the above requirements are called <mark>cloud-native applications</mark> (that run on K8s).
+Applications that meet the above requirements are called **cloud-native applications** (that run on K8s).
 
 ---
 
 ## Architecture:
 
-A Kubernetes cluster consists of a <mark>control plane</mark> (master node) plus a set of worker machines, called <mark>nodes</mark>, that run containerized applications. Every cluster needs at least one worker node in order to run Pods (more on that later).
+A Kubernetes cluster consists of a **control plane** (master node) plus a set of worker machines, called **nodes**, that run containerized applications. Every cluster needs at least one worker node in order to run Pods (more on that later).
 
 In production environments, the control plane usually runs across multiple computers, and a cluster usually runs multiple nodes, providing fault tolerance and high availability.
 
@@ -122,7 +122,7 @@ We are about to dive into an overview of each component in the Kubernetes archit
 
 ### Kubernetes API
 
-K8s is powered by an incredible <mark>REST </mark> (Representational State Transfer) API! The API server is a key component. Every move you make in K8s, whether it's creating pods or keeping an eye on services, is an API interaction. It's the heart and soul of the platform, offering a seamless interface for managing and engaging with Kubernetes resources. The K8s API is enormous, with hundreds of endpoints and concepts to explore. It's way more than just a collection of HTTP endpoints!
+K8s is powered by an incredible **REST** (Representational State Transfer) API! The API server is a key component. Every move you make in K8s, whether it's creating pods or keeping an eye on services, is an API interaction. It's the heart and soul of the platform, offering a seamless interface for managing and engaging with Kubernetes resources. The K8s API is enormous, with hundreds of endpoints and concepts to explore. It's way more than just a collection of HTTP endpoints!
 
 The API server is a crucial part of the K8s control plane that reveals the K8s API, acting as the control plane's frontend. The main implementation of the Kubernetes API server is kube-apiserver.
 
@@ -130,7 +130,7 @@ The API server is a crucial part of the K8s control plane that reveals the K8s A
 
 ### etcd
 
-It is the powerhouse for <mark>storing all cluster data</mark>! If your cluster ever goes down, don't worry—every bit of data is safely stored and backed up in the etcd folder, ensuring there's absolutely no data loss!
+It is the powerhouse for **storing all cluster data**! If your cluster ever goes down, don't worry—every bit of data is safely stored and backed up in the etcd folder, ensuring there's absolutely no data loss!
 
 The keyword here is **"**`key-value store`**"** which means that the data is stored in the form of **key-value pairs** rather than the traditional way of using tables.
 
@@ -138,7 +138,7 @@ The keyword here is **"**`key-value store`**"** which means that the data is sto
 
 ### Kubelet
 
-Think of it as the <mark>ultimate guardian </mark> or supervisor for containers on a worker node! Kubelet makes sure the containers inside the pod are running just as they should. It eagerly communicates with the control plane to get instructions (like "Run this pod here"). Kubelet keeps a close eye on the pod’s health and springs into action to restart it if anything goes wrong. Plus, it seamlessly interacts with container runtimes like Docker, containerd, or runc. How amazing is that?
+Think of it as the **ultimate guardian** or supervisor for containers on a worker node! Kubelet makes sure the containers inside the pod are running just as they should. It eagerly communicates with the control plane to get instructions (like "Run this pod here"). Kubelet keeps a close eye on the pod’s health and springs into action to restart it if anything goes wrong. Plus, it seamlessly interacts with container runtimes like Docker, containerd, or runc. How amazing is that?
 
 **Restaurant example**:  
 Imagine K8s as a restaurant and each table is a working node. Kubelet is a waiter who takes orders from the manager (API server) and ensures food (containers) is served correctly.  
@@ -148,7 +148,7 @@ If a dish (Pod) is missing, the waiter make sure it’s prepared again.
 
 ### Kube-proxy
 
-Think of kube-proxy as the ultimate <mark>traffic controller </mark> inside the K8s cluster! It expertly manages networking within the cluster and ensures requests zoom to the right pods, even if they switch to another node. It brilliantly handles load balancing between multiple pods. Using iptables and IPVS (those awesome Linux networking tools), it crafts routing rules like a pro!
+Think of kube-proxy as the **traffic controller** inside the K8s cluster! It expertly manages networking within the cluster and ensures requests zoom to the right pods, even if they switch to another node. It brilliantly handles load balancing between multiple pods. Using iptables and IPVS (those awesome Linux networking tools), it crafts routing rules like a pro!
 
 **Hotel example**:  
 Imagine K8s as a hotel, and each guest room is a pod. The front desk (kube-proxy) routes call correctly to the right room (Pod). If a guest (Pod) moves to another room (another node), the front desk redirects the call to the new room.
@@ -157,11 +157,11 @@ Imagine K8s as a hotel, and each guest room is a pod. The front desk (kube-proxy
 
 ### Kube-scheduler
 
-Kube-Scheduler is like a <mark>matchmaker</mark> for your pods, finding them the perfect worker node to run on. It figures out where each pod should go in the cluster by checking out the available nodes, their resources like CPU and memory, and any other requirements. It makes sure everything is spread out nicely across the cluster.
+Kube-Scheduler is like a **matchmaker** for your pods, finding them the perfect worker node to run on. It figures out where each pod should go in the cluster by checking out the available nodes, their resources like CPU and memory, and any other requirements. It makes sure everything is spread out nicely across the cluster.
 
 ### Kube-controller
 
-The controller manager is like the cluster's babysitter, always keeping an eye on things to make sure <mark>everything's running smoothly.</mark> It handles a bunch of controllers that take care of different parts of the cluster. If something goes off track, it jumps in to fix it, like restarting failed pods or auto-scaling.
+The controller manager is like the cluster's babysitter, always keeping an eye on things to make sure **everything's running smoothly**<mark>.</mark> It handles a bunch of controllers that take care of different parts of the cluster. If something goes off track, it jumps in to fix it, like restarting failed pods or auto-scaling.
 
 * **NodeController**
     
@@ -172,7 +172,7 @@ The controller manager is like the cluster's babysitter, always keeping an eye o
 
 ### Cloud Controller Manager
 
-The cloud controller manager (CCM) is a cool part of Kubernetes that lets it play nice with different cloud providers like AWS, Google Cloud, and Azure. It's like a bridge between K8s and the cloud, helping to manage stuff like load balancers, storage, and networking. It makes sure Kubernetes knows how to <mark>deal with cloud infrastructure</mark> the right way.
+The cloud controller manager (CCM) is a cool part of Kubernetes that lets it play nice with different cloud providers like AWS, Google Cloud, and Azure. It's like a bridge between K8s and the cloud, helping to manage stuff like load balancers, storage, and networking. It makes sure Kubernetes knows how to **deal with cloud infrastructure** the right way.
 
 ---
 
@@ -182,13 +182,13 @@ The cloud controller manager (CCM) is a cool part of Kubernetes that lets it pla
 
 ---
 
-* **Container**: You create it by <mark>running commands</mark> imperatively.
+* **Container**: You create it by **running commands** imperatively.
     
-* **Pod**: Instead of writing commands, you declare it in a <mark>YAML </mark> (YAML Ain’t Markup Language) in a configuration file.
+* **Pod**: Instead of writing commands, you declare it in a YAML (YAML Ain’t Markup Language) in a configuration file.
     
-* **ReplicaSet**: A ReplicaSet ensures that a specified number of **<mark>identical pods</mark>** are always running in your Kubernetes cluster. If a pod crashes or is deleted, the ReplicaSet automatically <mark>creates a new one</mark> to maintain the desired count.
+* **ReplicaSet**: A ReplicaSet ensures that a specified number of **identical pods** are always running in your Kubernetes cluster. If a pod crashes or is deleted, the ReplicaSet automatically **creates a new one** to maintain the desired count.
     
-* **Deployment**: A <mark>Deployment </mark> is a higher-level abstraction that manages ReplicaSets and <mark>handles rolling updates, rollbacks, and scaling</mark> in a controlled way. When you update your application, the Deployment **<mark>creates a new ReplicaSet</mark>**, gradually shifts traffic to the new pods, and removes the old ones without downtime.
+* **Deployment**: A **Deployment** is a higher-level abstraction that manages ReplicaSets and **handles rolling updates, rollbacks, and scaling** in a controlled way. When you update your application, the Deployment **creates a new ReplicaSet**, gradually shifts traffic to the new pods, and removes the old ones without downtime.
     
 
 ---
