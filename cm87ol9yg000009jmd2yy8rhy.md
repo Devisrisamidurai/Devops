@@ -53,7 +53,7 @@ Amazon is built on a **microservices architecture** where different services lik
 
 ![](https://miro.medium.com/v2/resize:fit:1050/1*iZzPm4ehDNXy42fvTbPpCQ.jpeg align="left")
 
-From this example, we can conclude that **there is a need for both**:
+When an order is placed on Amazon, the frontend captures the order details and sends them to the backend. The backend triggers a series of microservices: inventory checks stock, payment processes the transaction securely, and order management updates the order status. Each service communicates seamlessly, ensuring a smooth transaction and timely updates to the user. From this example, we can conclude that **there is a need for both**:
 
 1. **Isolation between the containers** to secure private information such as payment and finance applications.
     
@@ -94,7 +94,7 @@ Docker comes with several built-in networking options:
     #It is a unique ID created for the network
     ```
     
-* **Step 2:** Run two containers in the same bridge network.Here, -dit means to run the **Ubuntu** container in a detached mode in the background and interactive terminal with the name **containerA** and assign it to a user-defined custom network named **my-bridge** in the shell**.**
+* **Step 2:** Run two containers in the same bridge network.Here, -dit means to run the **Ubuntu** container in a detached mode in the background and interactive terminal with the name **containerA** and assign it to a user-defined custom network named **my-bridge** in the shell\*\*.\*\*
     
     ```bash
     docker run -dit --name containerA --network my-bridge ubuntu sh
