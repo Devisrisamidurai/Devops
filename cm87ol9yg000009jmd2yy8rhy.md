@@ -49,7 +49,7 @@ To know why networking is essential between the containers, let’s look at a re
 
 **What actually happens(Backend):**
 
-Amazon is built on a **microservices architecture** where different services like **products, homepage, account management, payments, inventory, and orders** work together simultaneously. When you order a product from Amazon, a series of backend events are triggered in a microservices architecture. Each service runs in isolated Docker containers, ensuring security and smooth communication.Here,**payment container service needs isolation while both the frontend nad backend needs seamless communication.**
+Amazon is built on a **microservices architecture** where different services like **products, homepage, account management, payments, inventory, and orders** work together simultaneously. When you order a product from Amazon, a series of backend events are triggered in a microservices architecture. Each service runs in isolated Docker containers, ensuring security and smooth communication.Here,**payment container service needs isolation while both the frontend and backend needs seamless communication.**
 
 ![](https://miro.medium.com/v2/resize:fit:1050/1*iZzPm4ehDNXy42fvTbPpCQ.jpeg align="left")
 
@@ -57,14 +57,14 @@ When an order is placed on Amazon, the frontend captures the order details and s
 
 1. **Isolation between the containers** to secure private information such as payment and finance applications.
     
-2. **Good communication between two containers**, such as the front end and back end, is essential for seamless communication in a real-time application used in production.
+2. **Good communication between two containers**, such as the frontend and backend, is essential for seamless communication in a real-time application used in production.
     
 
 ---
 
 ### Types of Docker Networks
 
-We discussed why and where networks are used in Docker containers. Now, let's look at how to implement them within containers for smooth communication, using the different types of Docker networks.Before that, let's look at some terms we will use in this blog:
+We discussed why and where networks are used in Docker containers. Now, let's look at how to implement them within containers for smooth communication, using the different types of Docker networks. Before that, let's look at some terms we will use in this blog:
 
 * **Docker Host:** A Docker host is a **physical or virtual machine** that runs the Docker daemon.
     
@@ -77,7 +77,7 @@ Docker comes with several built-in networking options:
 
 * When you run a container **without choosing a network**, it automatically connects to the **default bridge network**. This setup allows containers to communicate using their names on the same network, making it perfect for standalone apps on a single host.
     
-* Think of the bridge network as a connector that links networks together. It creates a **private network on the host**, enabling containers to talk to each other. If you want to expose the application to the outside world,then forward it to a port number.Docker ensures that connections between different networks remain blocked to keep everything secure.
+* Think of the bridge network as a connector that links networks together. It creates a **private network on the host**, enabling containers to talk to each other. If you want to expose the application to the outside world, then forward it to a port number. Docker ensures that connections between different networks remain blocked to keep everything secure.
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1741886916953/cbe9cc97-9f3e-418f-a6c6-abfd85a53e07.png align="center")
     
@@ -94,7 +94,7 @@ Docker comes with several built-in networking options:
     #It is a unique ID created for the network
     ```
     
-* **Step 2:** Run two containers in the same bridge network.Here, -dit means to run the **Ubuntu** container in a detached mode in the background and interactive terminal with the name **containerA** and assign it to a user-defined custom network named **my-bridge** in the shell\*\*.\*\*
+* **Step 2:** Run two containers in the same bridge network. Here, (-dit )means to run the **Ubuntu** container in a detached mode in the background and interactive terminal with the name **containerA** and assign it to a user-defined custom network named **my-bridge** in the shell\*\*.\*\*
     
     ```bash
     docker run -dit --name containerA --network my-bridge ubuntu sh
