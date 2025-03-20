@@ -43,7 +43,7 @@ Imagine an **e-commerce platform like Amazon**, which uses a **microservice** ar
 
 Without volumes, every restart would mean losing customers’ orders, product listings, and transaction history — it’s a disaster for any online store!
 
-### **Problems:**
+### **Problems**
 
 To conclude, below are the three major problems faced in terms of data storage in docker containers:
 
