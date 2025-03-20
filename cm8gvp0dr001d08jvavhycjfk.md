@@ -4,6 +4,7 @@ datePublished: Thu Mar 20 2025 04:56:02 GMT+0000 (Coordinated Universal Time)
 cuid: cm8gvp0dr001d08jvavhycjfk
 slug: docker-volumes-what-you-need-to-know
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1742442788367/f8afb3ee-8cc6-4bd0-9d13-9df5b8ae7cd7.png
+ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1742447105314/e4ccd131-a98b-4e6f-88cf-5379e04e3dce.png
 tags: docker, devops, cloudnative, bind-mount, docker-volumes
 
 ---
