@@ -152,8 +152,8 @@ Github is like **home for your git tracked projects** - it’s where you **store
     
 5. **Stars & Watching** - You can star repos like you bookmark them and watch repos to stay updated.
     
-
-**Projects & Discussions** - For organizing tasks like kanban-style and chatting about your ideas or roadmaps.
+6. **Projects & Discussions** - For organizing tasks like kanban-style and chatting about your ideas or roadmaps.
+    
 
 Okay, there are so many platforms(Gitlab, Bitbucket)out there, but we use GitHub for most activities as it is easy and beginner friendly. To get started with GitHub, follow steps below
 
@@ -171,16 +171,16 @@ Okay, there are so many platforms(Gitlab, Bitbucket)out there, but we use GitHub
 5. No license required for now as well (we'll look more into that later)
     
 
-**Step 3**: Now, copy the Remote URL which we need, present under the code tab. For now, hang on with the HTTP URL itself
+**Step 3**: Now, copy the Remote URL which we need, present under the code tab. For now, hang on with the HTTPS URL itself
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746079946743/f3a390fb-cb3d-43b3-851d-9a22c25ce2d8.png align="center")
 
 **Step 4:** Now navigate to VS Code and inside the project folder, type  
-**git remote add** - with the name of the URL. I want to **name it as origin**, as it is the **default** conventional name for any remote repository, followed by the URL that you have copied before. To verify whether the folder is attached to a remote URL, cross check it by **git remote -v** and it should show the URL **with** two options both to **push and fetch** as seen below\*\*.\*\*
+**git remote add** - with the name of the URL. I want to **name it as origin**, as it is the **default** conventional name for any remote repository, followed by the URL that you have copied before. To verify whether the folder is attached to a remote URL, cross check it by **git remote -v** and it should show the URL **with** two options both to **push and fetch** as seen below.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746080714388/b653e1a0-cc87-489c-95b1-b902d4348065.png align="center")
 
-Before pushing the changes, we’ll look into the branching strategy in git for sometime.
+Before pushing the changes, we’ll look into the branching strategy in git for sometime as it’s a prerequisite.
 
 ---
 
@@ -194,8 +194,8 @@ These are some branching strategies you should know
     
 * **dev** - A place where all active development happens before moving to the main branch.
     
-
-**feature branch** - Created for each new feature or enhancement, mostly used for creating new pull requests.
+* **feature branch** - Created for each new feature or enhancement, mostly used for creating new pull requests.
+    
 
 ---
 
@@ -203,12 +203,12 @@ How to check which branch you are working on currently? To know, simply do
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746099386472/3bab11a7-2b1f-42fa-9034-e1d871512d5a.png align="center")
 
-**git branch** - allows you to view the branch that you’re currently working on.In this case,it’s a master branch and the star pointer that you’re seeing is the HEAD which is currently pointing to master branch.
+**git branch** - allows you to **view the branch that you’re currently working on**.In this case,it’s a master branch and the **star pointer that you’re seeing is the HEAD** which is currently pointing to master branch.
 
 1. **Create a new branch in the git repo, use**
     
 
-**git branch** - **creating a new feature branch,** followed by the branch name. Let’s add a subtraction functionality to the calculator app. This **only creates a new branch without switching to the new branch,** and you’re still on your master branch only as you can see below.
+**git branch** - **creating a new feature branch,** followed by the branch name. Let’s add a subtraction functionality to the calculator app. This **only creates a new branch without switching to the new branch,** and you’re still on your master branch(HEAD) only as you can see below.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746099758117/e2beae91-b983-4fe8-ba16-86b5d86cb3f9.png align="center")
 
@@ -223,7 +223,7 @@ For simply switching btw branches, just use
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746100560280/3f5bed5f-81f8-42c3-a512-ea921caa9347.png align="center")
 
 To **delete a branch** after you’re done with a feature and it’s merged, type  
-**git branch with the -d option,** followed by a branch name that you want to delete. Successfully deleted the division branch as I don’t want it anymore!
+**git branch with the -d option,** followed by a branch name that you want to delete. I successfully deleted the division branch, as I don’t want it anymore!
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746100859464/4789059b-87f6-489f-aaa2-ac31de1729c0.png align="center")
 
@@ -233,12 +233,11 @@ Remember, if it’s not merged and you still want to delete,you can forcefully d
 git branch -D my-feature
 ```
 
-  
 Here's a complete video to help you visualize how the branching system works in Git. Shoutout to [learngitbranching.js.org](https://learngitbranching.js.org/) for making this so much easier!
 
 %[https://youtu.be/LKgNyQ49keo] 
 
-That’s all about Git branch, I hope that makes sense to you right now😚
+That’s all about Git branching strategy, I hope that makes sense to you right now😚
 
 ---
 
@@ -246,20 +245,23 @@ That’s all about Git branch, I hope that makes sense to you right now😚
 
 Think of forking like this: “**Hey GitHub, I love this project! Can I take a copy of it into my own account so I can play around, make changes, or contribute?**”  
 When you fork a repo:  
-\- You’re **creating your own version of someone else’s project** on your Github account.  
-\- You can make changes without affecting the original project.  
-\- It’s often the first step before **contributing to open-source**.  
-But how to fork? It’s so simple. Just hang on! You will find a fork button on the top right of every git repository as given below.
+You’re **creating your own version of someone else’s project** on your GitHub account.
+
+* You can make changes without affecting the original project.
+    
+* It’s often the first step before **contributing to open-source**.  
+    But how to fork? It’s so simple. Just hang on! You will find a fork button on the top right of every git repository as given below.
+    
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746104491583/264a1738-d61e-4ca3-b2fa-2a2f7b207464.png align="center")
 
 **Clone**  
-After forking, you need the code on your local machine to work with it.That’s where cloning comes in:  
+After forking, you need the code on your local machine to work with it. That’s where cloning comes in:  
 **“Hey Git, pull this entire repo from my Github account to my machine so I can code locally!”**
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746104638900/0ef237f0-fff1-40dc-80a1-5bcf0db73467.png align="center")
 
-You can do this via two ways: HTTP & SSH(Secure shell).For now, just hang on with HTTP.  
+You can do this via two ways: HTTPS & SSH(Secure shell).For now, just hang on with HTTPS.  
 To clone, just use git clone followed by the URL that you’ve copied.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746105086994/93357054-e2de-45e2-afc2-ffa16bd75984.png align="center")
@@ -276,15 +278,15 @@ Now let’s see how to push changes to your github repo. In the project folder, 
 git checkout -b main
 ```
 
-And then fetch any remote changes to your local folder.This can be done using  
-**git fetch origin** \- It’s like “Hey git, go check what’s new on github, but don’t touch my local files yet. Just show me what’s changed!”.  
+And then fetch any remote changes to your local folder. This can be done using  
+**git fetch origin** - It’s like “Hey git, go check what’s new on github, but don’t touch my local files yet. Just show me what’s changed!”.  
 It just fetches the latest updates from the remote URL(origin)
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746109341759/ecaa1be6-7266-4d4e-bf1e-e08d2494872a.png align="center")
 
 Then do,  
-**git pull origin main —allow-unrelated-histories** \- This command pulls changes from the main branch on GitHub and merges them into your current local branch even if their histories don’t match.Let’s look into this later!  
-  
+**git pull origin main —allow-unrelated-histories** - This command pulls changes from the main branch on GitHub and merges them into your current local branch even if their histories don’t match. why we do this ? Let’s look into more on this later !
+
 At last we can push changes to github,  
 **git push origin main** - “Hey git,take all my local changes on the main branch and upload them to Github under the same branch!”
 
@@ -292,54 +294,56 @@ It’s like saying, “I’m done coding now save it to the cloud so others or f
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746109572128/92a0d440-8ddf-422a-8794-d1c30dcef227.png align="center")
 
-This command shows that you’ve successfully uploaded your local commits on the main branch to the main branch on github!  
-  
-You can see this on GitHub as well. Tada 😄, all our files are pushed successfully!
+This command shows that you’ve successfully uploaded your local commits on the main branch to the main branch on github!
+
+You can see this on GitHub as well. Tada 😄, all our files are pushed successfully! Alright,Cool!
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746110511532/2f8a2396-a95d-497a-9307-fc90f2024da9.png align="center")
 
 ### Pull requests and your first contribution!
 
-Make your very first opensource contribution here👇. I have created a sample repository for the calculator application. Please follow these steps to make some code contribution.  
+Make your very first opensource contribution here👇. I have created a sample repository for the calculator application. Please follow these steps to make some code contribution.
+
+  
 1\. **Fork the repo** : Head into [https://github.com/Devisrisamidurai/git-github-demo](https://github.com/Devisrisamidurai/git-github-demo) and click on fork button and copy the main branch only.  
 2\. **Clone the repo** that was recently forked on your github account using git clone via HTTP.  
 3\. **Make some changes** in the code  
 For now the app only has addition functionality.You can add subtraction,division etc,, or just and readme file on how to use the application giving generalized overview.  
 4\. **Add the changes and commit** using git commit  
-5\. **Fetch and push** the changes.  
-  
-Once you push, it shows raise a Pull request as given below! I have sub.py file for subtarction functionality in the subtract branch.Ensure you’re on the feature branch to make PR’s as you cannot make it in Main default branch.
+5\. **Fetch and push** the changes.
+
+Once you push, it shows raise a Pull request as given below! I have sub.py file for subtarction functionality in the subtract branch. **Ensure you’re on the feature branch to make PR’s as you cannot make it in Main default branch.**
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746112289264/5e4133ed-b904-4d70-8115-b62dac54cc78.png align="center")
 
-Click that , it will take you the PR description page.Give a detailed description with a clear concise title.
+Click that , it will take you the PR description page. Give a detailed description on what changes you have made and how it improves the functionality with a clear concise title.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746112502299/f838d319-cde4-4e1d-b88c-06b6fbb75078.png align="center")
 
-Once you’re done with this,Click on create Pull request and yeah it’s done!Congrats to you🤗
+Once you’re done with this,Click on create Pull request button below and yeah it’s done!Congrats to you🤗
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1746112581433/91a6105a-b99c-4bbb-85a7-4bc2c6143806.png align="center")
 
-That’s it for this lecture. If you have come this far, I appreciate it💙 and wish you success on making your First Pull request! It’s a huge step in your learning process🙌
+That’s it for this lecture. If you have come this far, I highly appreciate it💙. It’s a huge step in your learning process🙌.  
+**IMPORTANT!**  
+***Do like the blog if you found it useful and share it with your friends!***
 
 ---
 
 ### Conclusion
 
-No matter how many tutorials you watch or blogs you read (even the really detailed ones!), nothing beats **getting your hands dirty** and actually doing it. That’s where the real learning happens. So, go ahead and make your **first contribution**! Grab the repo, make sure your pull request is **meaningful** — no spammy stuff, because **only valuable PRs will get reviewed and merged**.
+No matter how many tutorials you watch or blogs you read (even the really detailed ones!), nothing beats **getting your hands dirty** and actually doing it. That’s where the real learning happens. So, go ahead and make your **first contribution**! Grab the repo, make sure your pull request is **meaningful** — no spammy stuff, because **only valuable PRs will get reviewed and merged** for the demo project.
 
-In this post, we’ve covered the basics: **committing changes, branching, pushing, cloning, and forking**. These are the foundation of working with Git and GitHub.
+In this post, we’ve covered the basics: **initiating the project with git**,**committing changes, branching, pushing, cloning, and forking**. These are the foundation of working with Git and GitHub.
 
-Next up in the series, we’ll dive into some more advanced stuff like **merge, rebase, and cherry-pick** — so stay tuned!  
-  
-Thanks for reading!  
-  
-Until then,Byeeee👋  
+Next up in the series, we’ll dive into some more advanced stuff like **merge, rebase, and cherry-pick** and other important concepts — so stay tuned!
+
+Thanks for reading!
+
+Until then, Byeeee👋
 
 ![Cute Wave Sticker - Cute Wave Bye - Discover & Share GIFs](https://i.pinimg.com/originals/cf/eb/ee/cfebee8ad262ac6f09d92dcb71e45318.gif align="left")
 
-  
-  
 💡**Let’s connect!** Feel free to reach out:  
 [**LinkedIn**](https://www.linkedin.com/in/devisri-s-0987b6256/)  
 [**GitHub**](https://github.com/Devisrisamidurai)
