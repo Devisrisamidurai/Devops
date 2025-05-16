@@ -18,9 +18,9 @@ In this blog, we’ll explore the key differences between the two architectures,
 
 ## Life Before Microservices: The Monolithic Way
 
-Consider a large department store under one roof selling everything from groceries to electronics, clothing to furniture. A si**ngle team** manages this monolithic store, opens and closes as one unit, and any change — like fixing the billing system — requires adjustments across the entire store. That’s how traditional monolithic applications work.
+Consider a large department store under one roof selling everything from groceries to electronics, clothing to furniture. A si**ngle team** manages this monolithic store, opens and closes as one unit, and any change like fixing the billing system requires adjustments across the entire store. That’s how traditional monolithic applications work.
 
-In a **monolithic architecture**, all components — user interface, business logic, database access, etc. — are tightly packaged into one unit. Everything is developed, tested, deployed, and scaled together. If one small module changes, you have to re-deploy the entire application.
+In a **monolithic architecture**, all components — user interface, business logic, database access, etc, are tightly packaged into one unit. Everything is developed, tested, deployed, and scaled together. If one small module changes, you have to redeploy the entire application.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1744646415959/c218cdfc-318d-4850-be5f-7b443d2e8d99.png align="center")
 
@@ -43,7 +43,7 @@ It’s like replacing a bulb in our department store that requires shutting down
 
 ## Microservices
 
-Now, imagine instead of one big department store, you have a **shopping street** — each store sells a different product, managed independently. One sells groceries, another handles electronics, and another handles clothing. Each store can open, close, hire staff, or renovate without disturbing the others.
+Now, imagine instead of one big department store, you have a **shopping street** each store sells a different product, managed independently. One sells groceries, another handles electronics, and another handles clothing. Each store can open, close, hire staff, or renovate without disturbing the others.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1744650622842/3b3afa39-81ad-4758-af73-1069002f5b46.png align="center")
 
@@ -51,7 +51,7 @@ That’s the essence of **microservices.**.
 
 ### So, What are Microservices?
 
-Microservices architecture breaks the application into **small, independent services** — each focused on a specific business functionality (e.g., authentication, catalog management, payment gateway). These services are:
+Microservices architecture breaks the application into **small, independent services** → each focused on a specific business functionality (e.g., authentication, catalog management, payment gateway). These services are:
 
 * **Self-contained**
     
@@ -62,7 +62,7 @@ Microservices architecture breaks the application into **small, independent serv
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1744651665421/2ad46367-8214-4fb0-a35c-0323840b986d.png align="center")
     
 
-Each microservice can have its database, programming language, and deployment pipeline. It’s all about **separation of concerns** - one service does one job and does it well.
+Each microservice can have its database, programming language, and deployment pipeline. It’s all about **separation of concerns** — one service does one job and does it well.
 
 ### Common Questions When Adopting Microservices
 
@@ -77,7 +77,7 @@ As exciting as microservices sound, you might wonder:
     ![military cats cats soldiers on war #soldier #warriors #cat #catsoftiktok  #catslovers](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsUuSZXe8BFtpHBftzxnZuVdG2NRYppIQHtA&s align="center")
     
 * **But how do services communicate?**  
-    That’s where it gets technical — and interesting.
+    That’s where it gets technical and interesting.
     
 
 ---
@@ -88,7 +88,7 @@ Unlike monoliths, where components talk internally, microservices need a way to 
 
 ### 1\. **API Calls (Synchronous Communication)**
 
-Each service exposes an API endpoint. Other services can send HTTP requests to consume data or trigger actions. It’s like calling a store to ask for their stock availability — you wait for them to respond.
+Each service exposes an API endpoint. Other services can send HTTP requests to consume data or trigger actions. It’s like calling a store to ask for their stock availability you wait for them to respond.
 
 * Example: The Order service calls the Payment service’s API to process a transaction.
     
@@ -110,7 +110,7 @@ Instead of direct calls, services can send **messages** via a broker like **Rabb
 
 ### 3\. **Service Mesh**
 
-A **service mesh** (like Istio or Linkerd) abstracts the communication layer. It handles service discovery, load balancing, retries, security, and observability — without changing the application code.
+A **service mesh** (like Istio or Linkerd) abstracts the communication layer. It handles service discovery, load balancing, retries, security, and observability without changing the application code.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1744643478179/6dd60b5c-df21-40bb-9db2-74767910ba16.png align="center")
 
@@ -154,7 +154,7 @@ Monoliths are like Swiss Army knives—compact and easy to start with, but diffi
 
 For small teams and simple apps, a monolith might still be the right choice. But if you’re building for scale, speed, and flexibility, microservices open up many possibilities.
 
-The key is knowing **when and how to make the transition** — and that’s a journey worth planning carefully.
+The key is knowing **when and how to make the transition** and that’s a journey worth planning carefully.
 
 That’s it for this blog! **Thanks for reading!**
 
