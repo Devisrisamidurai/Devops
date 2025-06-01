@@ -84,8 +84,17 @@ sum = num1 + num2
 print("The sum is:", sum)
 ```
 
-Now you have your friend joining you for further developing and collaborating with the project and so you have to share this folder and both can work independently without overwriting the changes.That’s where git comes in!  
-To integrate git with your project, navigate to the project folder and type
+Now you have your friend joining you for further developing and collaborating with the project and so you have to share this folder and both can work independently without overwriting the changes.That’s where git comes in!
+
+Before diving in, Connect git with your username and email for configuration purposes.
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+
+  
+Done! To integrate git with your project, navigate to the project folder and type
 
 ```bash
 git init
@@ -304,7 +313,6 @@ You can see this on GitHub as well. Tada 😄, all our files are pushed successf
 
 Make your very first opensource contribution here👇. I have created a sample repository for the calculator application. Please follow these steps to make some code contribution.
 
-  
 1\. **Fork the repo** : Head into [https://github.com/Devisrisamidurai/git-github-demo](https://github.com/Devisrisamidurai/git-github-demo) and click on fork button and copy the main branch only.  
 2\. **Clone the repo** that was recently forked on your github account using git clone via HTTP.  
 3\. **Make some changes** in the code  
