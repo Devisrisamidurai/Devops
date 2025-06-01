@@ -4,7 +4,7 @@ datePublished: Thu May 08 2025 15:04:51 GMT+0000 (Coordinated Universal Time)
 cuid: cmafi0ojv001309js5o1d9j6u
 slug: exploring-git-and-github-part-ii
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1746455147199/b32c94ce-fa5c-41e1-a0a6-8b7408007ef9.png
-tags: opensource, devops, git-github-version-control-linux-git-commands-github-repositories-cheat-sheet-git-branching-git-workflow-collaboration-git-history-git-commit-git-merge-git-rebase-git-pull-request-git-fork-git-stash-git-remote-git-ignore-git-hooks-github-issues-github-actions-github-pages-github-security-git-for-beginners-advanced-git-techniques-github-collaboration-git-integration-git-flow-git-best-practices
+tags: github, opensource, git, devops
 
 ---
 
@@ -78,7 +78,7 @@ So to do that, simply
 
 You can simply copy the **commit ID** (the string you’re seeing before the commit message)  
 But what is that option -- hard means?  
-**The -- hard flag will also remove any uncommitted changes** in your working directory**.** So use this if you’re only 100% sure.
+**The -- hard flag will also remove any uncommitted changes** in your working directory\*\*.\*\* So use this if you’re only 100% sure.
 
 But what if you want to keep your changes? then use  
 **\--soft** - Let’s say you want to **undo the commit but keep your code in place** may be you want to edit and recommit.
@@ -138,7 +138,7 @@ And that’s a wrap about the major diff btw soft, hard and mixed options.
 
 ---
 
-### **Merge & Rebase**
+### **Merge & Rebase & Cherrypick**
 
 Okie, consider this:  
 You and your friend are working on two different features of the same calculator app.  
@@ -206,7 +206,22 @@ git add <filename>
 git rebase --continue
 ```
 
-That’s all about merging and rebasing! Make a lot of commits and get your hands dirty by playing around with these commands to build a strong foundation. Alright, Cool!
+That’s all about merging and rebasing!
+
+**CASE 3: Cherry pick**
+
+There are times **when you don’t want to merge an entire branch, you just need a specific commit from it**. That’s exactly what git cherry-pick is for.
+
+You’re working on the main branch, and there’s a useful bug fix on a feature-fix branch. The rest of the branch isn’t ready to be merged, but you need that one fix.
+
+```bash
+git checkout main
+git cherry-pick <commit-hash>
+```
+
+Use cherry pick when you need only one or a few commits, not the full branch. This would be particularly useful for hotfixes or selectively reusing changes to keep your branch’s history focused and clean.
+
+Make a lot of commits and get your hands dirty by playing around with these commands to build a strong foundation. Alright, Cool!
 
 ---
 
@@ -217,8 +232,8 @@ A merge conflict **happens when two branches make changes to the same part of fi
 For example,Consider this scenario  
 You change line 10 of the **addition.py** file in the **multiply branch**. Your teammate changes line 10 of the **addition.py** file in the **main branch**.
 
-When git tries to merge the branches, it gets confused: **“Which version of line 10 should I keep?”  
-**Git then pauses the merge and asks you to resolve the conflict manually.
+When git tries to merge the branches, it gets confused: \*\*“Which version of line 10 should I keep?”  
+\*\*Git then pauses the merge and asks you to resolve the conflict manually.
 
 **Github Issues**
 
