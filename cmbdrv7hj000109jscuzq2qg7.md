@@ -124,7 +124,7 @@ Similar to Icecream🍨, Linux also has many flavors in it,so called distributio
 **Everything you install** in your machine is **sort of a executable** — **A folder simply!(Running it actually means like double-clicking on that folder).** When you install Linux, it comes up with below folders featuring a home page,user files,system boot(reboot,off),a temp folder,etc folder consisting config files and then a bin folder like every operating system.  
 You can **view the same in File Explorer** on your **Windows** (Literally the same)!
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1747501354412/477d1ff8-0f47-4262-a065-8a7dde947e9f.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748886559286/192dc4f1-018c-498f-a16a-f7d597acbbd6.png align="center")
 
 ---
 
