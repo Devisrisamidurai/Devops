@@ -109,7 +109,7 @@ But.. wait! You may ask, when there are so many flavors out here, why use miniku
 
 Okie, it’s build time!
 
-To work around, I’m gonna build a simple **Golang web server** that simply says **“Hello world!”**👀.Open up the terminal and type,
+To work around, I’m gonna build a **Golang web server** that simply says \*\*“Hello world!”\*\*👀.Open up the terminal and type,
 
 ```plaintext
 mkdir K8s-Demo
@@ -130,7 +130,7 @@ import (
 }
 func main(){
     http.HandleFunc("/",handler)
-    fmt.Println("Server is running on port 8080...")
+    fmt.Println("Server is running on port 9090...")
     http.ListenAndServe(":9090",nil)
 }
 ```
@@ -143,11 +143,11 @@ go mod tidy
 go run main.go
 ```
 
-Access the app at http://localhost:9090 and tadaa😄, the app runs smoothly and prints hello world!! nothing fancy here🫠
+Access the app at http://localhost:9090 and tadaa😄, the app runs smoothly and prints hello world!! nothing fancy here, tho🫠
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762923705078/420b8d6f-6270-4dba-a315-d0d85508e323.png align="center")
 
-Now, containerize the hello-world app by writing a dockerfile.
+Now, we’ve to containerize the hello-world app by writing a dockerfile.
 
 ```dockerfile
 FROM golang:1.22 as builder
@@ -185,16 +185,17 @@ This should work fine, and the app can still be accessed via **port 9090**.
 
 ## Write a YAML file and its definition
 
-Here comes the important part, where we will be writing YAML files for deploying on Kubernetes. And again, if you’re new to YAML, then give this blog a read because things get difficult hereafter.
+Here comes the important part, where we will be writing **YAML files** for deploying on Kubernetes.
 
-[Introduction To YAML](https://hashnode.com/post/cmbnufk1r000402ibhr6i1vpx)
+**And again, if you’re new to YAML, then give this blog a read because things get difficult hereafter.  
+**[**Introduction To YAML**](https://hashnode.com/post/cmbnufk1r000402ibhr6i1vpx)
 
-We know that Kubernetes is essentially a **REST API** under the hood, and every action you take within a Kubernetes cluster, be it the creation of pods or the monitoring the services, boils down to interactions with its API. It’s a way more than just a collection of HTTP endpoints! And there are three ways to interact with the API:  
+We know that **Kubernetes** is essentially a **REST API** under the hood, and every action you take within a Kubernetes cluster, be it the creation of pods or the monitoring the services, boils down to interactions with its API. It’s a way more than just a collection of HTTP endpoints! And there are three ways to interact with the API:  
 1\. **via kubectl** - Kubernetes terminal way  
 2\. **curl requests**  
 3\. **client-go,client-java** library code
 
-Here’s the YAML manifest for Kubernetes deployment. We’ll go through what each line means and how it works. But before that, we should know the difference between what a deployment is, a service vs a replicaset in Kubernetes manifests.
+Here’s the YAML manifest for Kubernetes deployment. We’ll go through what each line means and how it works. But before that, we should know the difference between what **a deployment is, a service vs a replicaset in Kubernetes manifests.**
 
 * **Container**: Created by running commands using Docker.
     
@@ -228,7 +229,7 @@ spec:
         - name: hello-k8s
           image: hello-k8s:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 9090
 ```
 
 Here’s the YAML manifest for creating a service in K8s using NodePort.
@@ -243,15 +244,16 @@ spec:
    selector: 
      app: hello-k8s
    ports:
-   - port: 8080
-     targetPort: 8080
+   - port: 9090
+     targetPort: 9090
      nodePort: 30008
 ```
 
 Here’s the complete breakdown of what each line meant in the YAML file we defined above.
 
-| **apiVersion - apps/v1** | Every K8s object(pods, deployments, services) belongs to an API group and version and tells which version of API to use to interpret this file. |
+| Top level fields | Resource Definition |
 | --- | --- |
+| **apiVersion - apps/v1** | Every K8s object(pods, deployments, services) belongs to an API group and version and tells which version of API to use to interpret this file. |
 | **kind** | This defines what type of K8s object we’re creating whether it’s a pod/service/Configmap/Ingress/deployment |
 | **metadata** | Provides info about object with its name, namespace, labels and annotations. |
 | **spec(specification)** | This is the heart of your resource,describes the desired state and it constantly compares the current state with its desired state. |
@@ -274,7 +276,7 @@ The whole view of Deployment in K8s is as follows:
 
 > ***Minikube (kubectl) reads the YAML file and identifies it as a Deployment(kind: Deployment) and creates a Deployment object named hello-K8s. Spawns 2 pods based on the template. Each pod runs a container from hello-k8s:latest listening on port 9090 and keeps monitoring; if a pod dies, it restarts one to maintain 2 running pods.***
 
-Okie, let’s start deploying to K8s.. Open your **WSL terminal** and **create a user without sudo privileges** because its safer to run the minikube outside root account. To start the cluster, simply type
+Okie, let’s start deploying to K8s.. Open your **WSL terminal** and **create a user without sudo privileges** because its safer to run the minikube outside the root account. To start the cluster, simply type: **minikube start**
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763051193877/579f73fc-e19b-4896-9d76-457775d9a4df.png align="center")
 
@@ -284,7 +286,7 @@ As you can see, a cluster with a worker node using the Docker driver as a base, 
 
 If you wanna check current status of the minikube cluster, type and you can see a couple of things here👀
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763052425824/a0736cf4-993f-40e2-a7d1-bc2af460bb13.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763052425824/a0736cf4-993f-40e2-a7d1-bc2af460bb13.png align="left")
 
 * **Control plane** - the minikube cluster acts as the master node/control plane.
     
@@ -323,7 +325,7 @@ hello-k8s-74f56ddfc7-xf9mv    0/1    ContainerCreating    0          10s
 hello-k8s-74f56ddfc7-nq8hf    0/1    ContainerCreating    0          10s
 ```
 
-Ohh well, the container is getting ready here, let’s see after some time what happens!
+Ohh, well, as you can see, the container is getting ready here, let’s see after some time what happens!
 
 ```bash
 $ kubectl get pods
@@ -332,7 +334,7 @@ hello-k8s-74f56ddfc7-lps9m    1/1     Running   0          20s
 hello-k8s-74f56ddfc7-nq8hf    1/1     Running   0          20s
 ```
 
-As you can see now, the container is up and running with the desired state being 2 mentioned in the deployment.yaml file.
+As you can see now, the container is up and running with the **desired state being 2** mentioned in the `deployment.yaml` file.
 
 To check the deployments in minikube cluster,
 
@@ -342,14 +344,14 @@ NAME         READY   UP-TO-DATE   AVAILABLE   AGE
 hello-k8s    2/2     2            2           1m
 ```
 
-Now let’s deploy the service as well. For that,
+Now let’s deploy the service as well. For that, hardcode the service file path along with the command.
 
 ```bash
 $ kubectl apply -f k8s/manifests/service.yaml
 service/hello-service created
 ```
 
-Let’s see if the service we created is configured correctly
+Let’s see if the service we created is configured correctly🤔
 
 ```bash
 $ kubectl get svc
@@ -358,7 +360,7 @@ hello-service    NodePort    10.96.122.167    <none>        8080:30008/TCP   1m
 kubernetes       ClusterIP   10.96.0.1        <none>        443/TCP          2d
 ```
 
-Well, that too works fine! That’s how you deploy in Kubernetes🙌
+Well, that too works fine! `hello-service` is right there👀...That’s how you deploy in Kubernetes🙌
 
 Congrats, dude🎉!
 
@@ -391,7 +393,7 @@ Now it’s playtime around Kubernetes. Roll up your sleeves, this is gonna be re
 
 So far, we saw how to get deployments, services separately. Now, we can get altogether with just a single command. As you can see below,
 
-it gives the pods→ services→ deployements→replicaset in the hierarchy.
+it gives the **pods→ services→ deployments→ replicaset** in the hierarchy.
 
 ```bash
 $ kubectl get all
@@ -462,7 +464,7 @@ In browser, you can see the output!! taddaaa💃🏻😉
 Hello world from Kubernetes!! This is Go web server running in localhost.
 ```
 
-Now, let’s stop the minikube cluster and then gracefully delete it
+Now, let’s stop the minikube cluster and then gracefully delete it. Clean up!
 
 ```bash
 $ minikube stop
@@ -476,14 +478,13 @@ $ minikube delete
 And, that’s it for this lecture! I hope you enjoyed as much as I did😉  
 Practice it by developing a simple project and do this step by step as above, and with time, all these become so natural for you!!
 
-##   
-Important info
+### **Important info**
 
 1. When you work with K8s, always ensure that you run all the commands not as the root user. Create a user and switch to it (e.g., `su devis`) to experiment.
     
 2. Do not install minikube if your system has limited memory or frequently hangs. It can slow down your laptop. Instead, consider using online playgrounds for more flexibility, and it's really cool!
     
-3. If you've read this far, it's been a long and enjoyable journey with you. Like ❤️ the blog and share it with your friends who might find it useful.
+3. If you've read this far, it's been a long and nice journey with you. Like ❤️ the blog and share it with your friends who might find it useful🤩.
     
 
 ## Conclusion
@@ -491,11 +492,11 @@ Important info
 Working with Kubernetes might seem complex at first, but tools like minikube make it simple to learn, experiment, and deploy your own applications locally. By setting up a cluster, writing a few YAML manifests, and deploying a simple app, you’ve come through how containers are managed, scaled and exposed in a real Kubernetes environment.
 
 And **the best way to learn anything is by doing**👩‍💻! So why just scamming through?  
-Get your hands dirty, try breaking things, explore different installation options and experiment with pods, services and deployments and with each command you run brings you closer to understanding the complexity behind it and how powerful Kubernetes really is.
+Get your hands dirty, try breaking things, explore different installation options and experiment with pods, services and deployments and with each command you run brings you closer to understanding the complexity behind it and see how powerful Kubernetes really is.
 
-**Thank you for reading😄**! I hope you enjoyed learning about Kubernetes!
+**Thank you for reading😄**! I hope you really enjoyed learning Kubernetes!
 
-See you soon with the next one, Until thenn, Byeee🙋‍♀️
+See you soon with the next one, Until thenn, Byeeee🙋‍♀️
 
 ![Bye Dog GIFs | Tenor](https://media.tenor.com/X2FM1MIFqy4AAAAM/hi-bye.gif align="left")
 
